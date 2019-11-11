@@ -33,7 +33,9 @@ export default function App() {
       </View>
 
       {/* si quiero que el scroll esté disponible tengo que usar un ScrollView, el cual
-      tiene muchas propiedades */}
+      tiene muchas propiedades. El problema es que ScrollView siempre renderiza tooodos los items
+      aun asi no se vean en pantalla, lo cual lo hace ineficiente!!
+      Para solucionar eso se usa FlatList (Ver el ejemplo en App2.js) */}
       <ScrollView>{courseGoals.map(goal => 
               /* tengo que envolver a Text dentro de un View ya que Text no acepta casi ningun style */
                <View key={goal} style={styles.listItem}>
