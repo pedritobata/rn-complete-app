@@ -28,7 +28,7 @@ class FlexExample extends React.Component{
               </View>
               <View style={{
                   backgroundColor: 'blue',
-                  flex:2,
+                  flex:3,
                   alignItems: 'center',
                   justifyContent: 'center'  
               }}>
