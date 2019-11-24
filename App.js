@@ -12,10 +12,15 @@ export default function App() {
 
   const addGoalHandler = (goalTitle) => {
     setCourseGoals(currentGoals => [...currentGoals, { uid: Math.random().toString(), value: goalTitle }]);
+    setIsAddMode(false);
   };
 
   const deleteGoalHandler = id => {
     setCourseGoals(courseGoals.filter(goal=> goal.uid !== id));
+  }
+
+  const onCancelAdditionHandler = () => {
+    setIsAddMode(false);
   }
 
 
@@ -23,7 +28,7 @@ export default function App() {
     <View style={styles.screen}>
       
     <Button title="Add New Goal" onPress={()=>setIsAddMode(true)}/>
-    <GoalInput visible={isAddMode} onAddGoal={addGoalHandler}/>
+    <GoalInput visible={isAddMode} onAddGoal={addGoalHandler} onCancel={onCancelAdditionHandler}/>
 
      {/*  FlatList utiliza props para que le pasemos todo lo que necesita
       trabaja con arrays pero de Objetos, donde podemos poner las propiedades que
